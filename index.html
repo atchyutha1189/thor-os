@@ -940,7 +940,7 @@ function calcStr(t){
 function renderWater(){
   const wc=document.getElementById("wcups");if(!wc)return;const td=getTD(),f=td.water||0;wc.innerHTML="";
   for(let i=0;i<8;i++){
-    const c=document.createElement("div");c.className="wu"+(i<f?" wf":"");c.innerHTML="<div class="ww"></div>";
+    const c=document.createElement("div");c.className="wu"+(i<f?" wf":"");c.innerHTML = '<div class="ww"></div>';
     c.addEventListener("click",()=>{const td2=getTD();td2.water=i<(td2.water||0)?i:i+1;if(document.getElementById("wcnt"))document.getElementById("wcnt").textContent=td2.water;saveS();renderWater();});
     wc.appendChild(c);
   }
